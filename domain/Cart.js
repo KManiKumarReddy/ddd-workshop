@@ -1,6 +1,9 @@
+const ActivityLog = require("./ActivityLog");
+
 class Cart {
   constructor() {
     this.items = [];
+    this.activityLog = new ActivityLog();
   }
 
   addItem(item) {
@@ -16,7 +19,10 @@ class Cart {
         flag = true;
       }
     });
-    this.items.splice(index, 1);
+    if (flag) {
+      this.items.splice(index, 1);
+      this.activityLog.recordItemRemoved(name);
+    }
   }
 }
 
