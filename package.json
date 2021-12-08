@@ -1,0 +1,12 @@
+{
+  "name": "ddd-workshop",
+  "version": "0.1.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
