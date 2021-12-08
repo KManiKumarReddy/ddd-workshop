@@ -20,6 +20,10 @@ main = () => {
     cart.addItem(new Item(product3, 2));
 
     console.log(`current State of Cart:`, cart);
+
+    cart.removeItem('iPad Pro')
+
+    console.log(`current State of Cart:`, cart);
 }
 
 main();
