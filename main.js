@@ -1,6 +1,7 @@
 const Cart = require('./domain/Cart');
 const Product = require('./domain/Product');
 const Item = require('./domain/Item');
+const Price = require('./domain/Price');
 
 main = () => {
     const cart1 = new Cart();
@@ -35,6 +36,14 @@ main = () => {
 
     console.dir([`current State of Cart 1:`, cart1], { depth: null });
     console.dir([`current State of Cart 2:`, cart2], { depth: null });
+
+    // problem #7 add price to product
+
+    const product4 = new Product('MacBook Pro', new Price(10000));
+    cart1.addItem(new Item(product4, 1));
+
+    console.log(`\n\n#7\n product price => `, product4.price);
+    console.dir(cart1, { depth: null });
 }
 
 main();
