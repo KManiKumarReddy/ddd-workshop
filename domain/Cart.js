@@ -1,10 +1,10 @@
 class Cart {
     constructor() {
-        this.cartItems = [];
+        this.items = [];
     }
 
-    addCartItem(cartItem) {
-        this.cartItems.push(cartItem);
+    addItem(item) {
+        this.items.push(item);
     }
 }
 
