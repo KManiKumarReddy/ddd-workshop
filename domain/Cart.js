@@ -6,11 +6,15 @@ class Cart {
     constructor() {
         this.items = [];
         this.events = [];
-        this.createdAt = uuid();
+        this.id = uuid();
     }
 
     addItem(item) {
         this.items.push(item);
+    }
+
+    getItems() {
+        return this.items;
     }
 
     removeItem(name) {
