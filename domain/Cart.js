@@ -1,10 +1,11 @@
 const ActivityLog = require("./ActivityLog");
+const ItemRemovedEvent = require("./ItemRemovedEvent");
 const { v4: uuid } = require('uuid');
 
 class Cart {
     constructor() {
         this.items = [];
-        this.activityLog = new ActivityLog();
+        this.events = [];
         this.createdAt = uuid();
     }
 
@@ -23,7 +24,7 @@ class Cart {
         });
         if (flag) {
             this.items.splice(index, 1);
-            this.activityLog.recordItemRemoved(name);
+            this.events.push(new ItemRemovedEvent())
         }
     }
 }

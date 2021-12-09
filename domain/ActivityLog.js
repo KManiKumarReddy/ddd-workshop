@@ -1,6 +1,6 @@
 class ActivityLog {
   constructor() {
-    this.removedItems = [];
+    this.events = [];
   }
 
   recordItemRemoved(name) {

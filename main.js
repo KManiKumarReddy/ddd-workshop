@@ -2,6 +2,7 @@ const Cart = require('./domain/Cart');
 const Product = require('./domain/Product');
 const Item = require('./domain/Item');
 const Price = require('./domain/Price');
+const Discount = require('./domain/Discount');
 
 main = () => {
     const cart1 = new Cart();
@@ -44,6 +45,16 @@ main = () => {
 
     console.log(`\n\n#7\n product price => `, product4.price);
     console.dir(cart1, { depth: null });
+
+    const competitorMap = {
+        'MacBook Pro': new Price(100, 'USD')
+    }
+
+    console.log(competitorMap['iPad Pro']);
+
+    const discount = new Discount(product4.price, 10)
+    product4.updatePrice(discount.getDiscount());
+    console.log(product4);
 }
 
 main();
