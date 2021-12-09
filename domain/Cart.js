@@ -7,6 +7,7 @@ class Cart {
         this.items = [];
         this.events = [];
         this.id = uuid();
+        this.checkedOut = false;
     }
 
     addItem(item) {
@@ -30,6 +31,10 @@ class Cart {
             this.items.splice(index, 1);
             this.events.push(new ItemRemovedEvent())
         }
+    }
+
+    markCheckedOut() {
+        this.checkedOut = true;
     }
 }
 
